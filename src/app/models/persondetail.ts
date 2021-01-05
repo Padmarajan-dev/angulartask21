@@ -1,4 +1,4 @@
-export interface Persondetail {
+export class Persondetail {
   fullName:string;
   gender:string;
   country:string;

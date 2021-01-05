@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
-import {} from '../../models/persondetail';
+import {Persondetail} from '../../models/persondetail';
 import * as $ from 'jquery' 
 import { from } from 'rxjs';
 @Component({
@@ -12,7 +12,7 @@ import { from } from 'rxjs';
 export class PersonaldetailsComponent implements OnInit {
   @Output() next = new EventEmitter<string>();
   gender:string='';
-  persondetail:persondetail;
+  persondetail:Persondetail=new Persondetail();
   personalDetailsForm:FormGroup;
   flagclass='';
   countrycode='';
@@ -72,14 +72,13 @@ export class PersonaldetailsComponent implements OnInit {
   //for trigger a company detail form by @output method
   gotoCompanyDetails()
   {
-     this.next.emit('');
+  
      this.persondetail.fullName = this.f.fullname.value;
      this.persondetail.gender=this.gender;
      this.persondetail.country=this.f.country.value;
      this.persondetail.state=this.f.state.value;
-     this.persondetail.mobile='+'+this.countrycode+' '+this.f.mobile.value;
-
-     console.log(this.persondetail);
+     this.persondetail.mobile=this.countrycode+' '+this.f.mobile.value;
+     this.next.emit('');
   }
 
   //for get a gender value
