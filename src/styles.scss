@@ -1,0 +1,33 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~bs-stepper/dist/css/bs-stepper.min.css';
+@import '~flag-icon-css/css/flag-icon.css';
+
+
+.form-box 
+{
+    background-color: white;
+    padding: 25px;
+    border-radius: 4px;
+}
+
+body
+{
+    background-color:#e2e9f0;
+}
+
+label
+{
+    font-weight: bold;
+}
+
+.backbtn 
+{
+    background-color: antiquewhite;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

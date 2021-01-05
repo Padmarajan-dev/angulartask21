@@ -1,0 +1,25 @@
+//stepper style configs
+.bs-stepper-header
+{
+    background-color: #3f0b55;
+}
+
+.bs-stepper-label 
+{
+    color: white;
+}
+
+bs-stepper-circle
+{
+  &:focus,&:active 
+  {
+      background-color: green;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .bs-stepper-label 
+    {
+     font-size:0.7rem !important;
+    }
+ }

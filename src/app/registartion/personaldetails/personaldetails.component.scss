@@ -1,0 +1,42 @@
+.btn-outline-light {
+    color: #6aa5e0;
+    border-color: #5b6f83;
+    border-radius: 0% !important
+}
+
+.active
+{
+    border:none !important;
+    color: rgb(77, 12, 121);
+    background-color: #5bff317a !important;
+}
+
+.custom-input
+{
+    border: 1px solid grey;
+    border-radius: 4px;
+    &>.custom-select,.form-control
+    {
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: none !important;
+        outline: none !important;
+    }
+}
+
+input
+{
+  &:focus
+  {
+      &>h5  
+      {
+          color: blue;
+      }
+  }
+}
+
+.code 
+{
+    background-color: antiquewhite;
+}
+

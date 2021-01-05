@@ -1,0 +1,47 @@
+
+ <!--Stepper-->   
+<div class="row"> 
+<div class="col-12">
+<div id="stepper1" class="bs-stepper">
+    <div class="bs-stepper-header">
+      <div class="step ml-1 ml-lg-5" data-target="#test-l-1">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">Personal Details</span>
+        </button>
+      </div>
+      <div class="step ml-1 ml-lg-5" data-target="#test-l-2">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">Company Details</span>
+        </button>
+      </div>
+      <div class="step ml-1 ml-lg-5" data-target="#test-l-3">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">3</span>
+          <span class="bs-stepper-label">Verification</span>
+        </button>
+      </div>
+    </div>
+     <!--Stepper-->
+      <!--Forms-->
+    <div class="bs-stepper-content">
+            <!--Personal detail-->
+            <div id="test-l-1" class="content mt-5">
+                <app-personaldetails (next)="next()"></app-personaldetails>
+            </div>
+            <!--Company detail-->
+            <div id="test-l-2" class="content mt-5">
+                <app-companydetails (back)="back()" (next)="next()"></app-companydetails>
+            </div>
+            <!--Verification-->
+            <div id="test-l-3" class="content mt-5">
+                 <app-verfication (backto)="back()"></app-verfication>
+           </div>
+    </div>  
+  </div>  
+</div>
+</div>  
+   
+
+  

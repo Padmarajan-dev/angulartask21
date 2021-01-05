@@ -1,0 +1,77 @@
+<div class="col-12 input">
+<h5 class="text-center">Personal Details</h5>
+<div class="form-box col-12 col-lg-3 mx-auto mt-4" [formGroup]="personalDetailsForm">
+    <!--Full name field-->
+    <div>
+        <label class="form-control-label">Full Name</label>
+        <input class="form-control" autocomplete="off" formControlName="fullname">
+    </div>
+    <div class="mt-2">
+      <p class="error-text ml-2" *ngIf="personalDetailsForm.get('fullname').touched && personalDetailsForm.get('fullname').errors?.required">Full name is required</p>
+      <p class="error-text ml-2" *ngIf="personalDetailsForm.get('fullname').touched && personalDetailsForm.get('fullname').errors?.minlength">Full name must have min of 4 characters</p>
+      <p class="error-text ml-2" *ngIf="personalDetailsForm.get('fullname').touched && personalDetailsForm.get('fullname').errors?.maxlength">Full name must have max of 8 characters</p>
+    </div>
+
+   <!--Full name field-->
+   <!--Gender Field-->
+   <div class="mt-4">
+      <label class="form-control-label">Gender</label>
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-outline-light ml-2" [class.active]="gender=='male'">
+          <input type="checkbox" checked autocomplete="off" (click)="getGender('male')"> Male
+        </label>
+        <label class="btn btn-outline-light ml-2" [class.active]="gender=='female'">
+          <input type="checkbox"  autocomplete="off" (click)="getGender('female')"> Female
+        </label>
+        <label class="btn btn-outline-light ml-2" [class.active]="gender=='other'">
+          <input type="checkbox"  autocomplete="off" (click)="getGender('other')"> Other
+        </label>
+      </div>
+   </div>
+   <p class="error-text mt-2 ml-2" *ngIf="gender==''">Please Select a Gender</p>
+     <!--Gender Field-->
+     <!--Country Input Field-->
+   <div class="mt-4" >
+      <label class="form-control-label">Country</label> 
+      <div class="input-group-prepend custom-input p-1">
+        <span [class]="flagclass"></span>
+        <select class="custom-select" (change)="onChange($event.target.value)" id="countryselect" formControlName="country">
+            <option *ngFor="let country of countries" [value]="country.name" data-icon="flag-icon flag-icon-gr">
+              {{country.name}}
+            </option>
+        </select>
+       </div>
+   </div>  
+   <p class="error-text mt-2 ml-2" *ngIf="personalDetailsForm.get('country').touched && personalDetailsForm.get('country').errors?.required">please select a Country</p>
+
+     <!--Country Input Field-->
+    <!--State Input Field-->
+   <div class="mt-4">
+    <label class="form-control-label">State</label> 
+    <select class="custom-select" formControlName="state">
+      <option *ngFor="let state of states" [value]="state" data-icon="flag-icon flag-icon-gr">
+        {{state}}
+      </option>
+    </select>
+   </div> 
+   <p class="error-text mt-2 ml-2" *ngIf="personalDetailsForm.get('state').touched && personalDetailsForm.get('state').errors?.required">please select a state</p>
+    <!--State Input Field-->
+    <div class="mt-4" >
+        <label class="form-control-label">Phone</label> 
+        <div class="input-group-prepend custom-input">
+          <div class="col-lg-3  col-4 d-flex code">
+              <span [class]="flagclass"></span>
+              <p class="mt-3 ml-1">{{countrycode}}</p>
+        </div>
+          <input type="number" formControlName="mobile" class="form-control mt-2" autocomplete="off">
+         </div>
+         <div class="mt-2">
+          <p class="error-text ml-2" *ngIf="personalDetailsForm.get('mobile').touched && personalDetailsForm.get('mobile').errors?.required">mobile number is required</p>
+          <p class="error-text ml-2" *ngIf="personalDetailsForm.get('mobile').touched && personalDetailsForm.get('mobile').errors?.pattern">Please Enter a Valid mobile Number</p>
+        </div>
+     </div>
+    
+    <button class="btn btn-info mt-4 col-12 mx-auto" [disabled]="!personalDetailsForm.valid || gender==''" (click)="gotoCompanyDetails()">Next</button>
+</div>
+</div>
+
