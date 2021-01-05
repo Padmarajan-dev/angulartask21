@@ -3,6 +3,7 @@ import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Companydetail } from 'src/app/models/companydetail';
+import { RegistrationformService } from 'src/app/services/registrationform.service';
 
 @Component({
   selector: 'app-companydetails',
@@ -15,7 +16,7 @@ export class CompanydetailsComponent implements OnInit {
   companyDetails:FormGroup;
   Companydetail:Companydetail=new Companydetail();
   imageSrc: string | ArrayBuffer='../../../assets/dummy-image.png';
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private formdataService:RegistrationformService) { }
   isChecked:boolean=false;
   ngOnInit(): void {
     this.companyDetails= this.fb.group({
@@ -32,8 +33,9 @@ export class CompanydetailsComponent implements OnInit {
      this.Companydetail.companyName=this.f.companyname.value;
      this.Companydetail.imgurl=this.imageSrc;
      this.Companydetail.jobtitle=this.f.jobtitle.value;
-     this.Companydetail.emailid = this.f.email.value;
+     this.Companydetail.emailid = this.f.emailid.value;
      this.Companydetail.yearsofexperience=parseInt(this.f.yearofexp.value);
+     this.formdataService.Companydetails.next(this.Companydetail);
      this.next.emit('');
    }
 

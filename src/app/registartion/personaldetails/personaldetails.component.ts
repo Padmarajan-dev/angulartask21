@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 import {Persondetail} from '../../models/persondetail';
 import * as $ from 'jquery' 
 import { from } from 'rxjs';
+import { RegistrationformService } from 'src/app/services/registrationform.service';
 @Component({
   selector: 'app-personaldetails',
   templateUrl: './personaldetails.component.html',
@@ -60,7 +61,7 @@ export class PersonaldetailsComponent implements OnInit {
     }
 ];
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private formdataService:RegistrationformService) { }
 
   //funtion for create state array for states selectbox by selected coutry value
   onChange(val) {
@@ -78,6 +79,7 @@ export class PersonaldetailsComponent implements OnInit {
      this.persondetail.country=this.f.country.value;
      this.persondetail.state=this.f.state.value;
      this.persondetail.mobile=this.countrycode+' '+this.f.mobile.value;
+     this.formdataService.personaldetails.next(this.persondetail);
      this.next.emit('');
   }
 
@@ -92,12 +94,6 @@ export class PersonaldetailsComponent implements OnInit {
     return this.personalDetailsForm.controls;
   }
   ngOnInit(): void {
-    //default country value
-    // let obj = this.countries.find(country=>country.name==='India');
-    // this.states = obj.states;
-    // this.flagclass = obj.flag;
-    // this.countrycode = obj.code;
-
     this.personalDetailsForm= this.fb.group({
       'fullname':['',[Validators.required,Validators.minLength(4),Validators.maxLength(8)]],
       'country':['',[Validators.required]],
