@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Stepper from 'bs-stepper';
+import { RegistrationformService } from '../services/registrationform.service';
 
 @Component({
   selector: 'app-registration',
@@ -8,7 +9,21 @@ import Stepper from 'bs-stepper';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+   profiledetailform:boolean=false;
+   companydetailform:boolean=false;
+   verified:boolean=false;
+
+  constructor(private formdataService:RegistrationformService) {
+    this.formdataService.profileDetailsFilled.subscribe(res=>{
+      this.profiledetailform=res;
+    });
+    this.formdataService.companyDetailsFilled.subscribe(res=>{
+      this.companydetailform=res;
+    });
+    this.formdataService.verified.subscribe(res=>{
+      this.verified=res;
+    });
+  }
 
 
   private stepper: Stepper;
@@ -26,7 +41,8 @@ export class RegistrationComponent implements OnInit {
     this.stepper = new Stepper(document.querySelector('#stepper1'), {
       linear: false,
       animation: true
-    })
+    });
+ 
   }
 
 }

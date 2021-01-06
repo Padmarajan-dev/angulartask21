@@ -13,6 +13,7 @@ import { RegistrationformService } from 'src/app/services/registrationform.servi
 export class PersonaldetailsComponent implements OnInit {
   @Output() next = new EventEmitter<string>();
   gender:string='';
+  personalDetailsFilled:boolean=false;
   persondetail:Persondetail=new Persondetail();
   personalDetailsForm:FormGroup;
   flagclass='';
@@ -80,6 +81,7 @@ export class PersonaldetailsComponent implements OnInit {
      this.persondetail.state=this.f.state.value;
      this.persondetail.mobile=this.countrycode+' '+this.f.mobile.value;
      this.formdataService.personaldetails.next(this.persondetail);
+     this.formdataService.profileDetailsFilled.next(true);
      this.next.emit('');
   }
 

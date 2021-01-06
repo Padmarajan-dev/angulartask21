@@ -12,8 +12,9 @@ import { RegistrationformService } from 'src/app/services/registrationform.servi
 export class VerficationComponent implements OnInit {
   @Output() backto = new EventEmitter<string>();
   verficationform:FormGroup;
-  personalDetail:Persondetail;
-  companyDetail:Companydetail;
+  verified:boolean=false;
+  personalDetail:Persondetail=new Persondetail();
+  companyDetail:Companydetail=new Companydetail();
   constructor(private fb:FormBuilder,private formdataService:RegistrationformService) { 
   }
 
@@ -25,18 +26,7 @@ export class VerficationComponent implements OnInit {
       'value4':['',[Validators.required]],
       'value5':['',[Validators.required]],
     });
-
-  }
-
-  backtoprevious()
-  {
-    this.backto.emit();
-  }
-//verify & store all registrationdetails in localstorage
-  verify()
-  {
     this.formdataService.personaldetails.subscribe(res=>{
-      console.log('response'+res.fullName);
       this.personalDetail.fullName = res.fullName;
       this.personalDetail.country=res.country;
       this.personalDetail.gender=res.gender;
@@ -51,9 +41,16 @@ export class VerficationComponent implements OnInit {
       this.companyDetail.jobtitle=res.jobtitle;
       this.companyDetail.yearsofexperience=res.yearsofexperience;
     });
+  }
 
-  
-
+  backtoprevious()
+  {
+    this.backto.emit();
+  }
+//verify & store all registrationdetails in localstorage
+  verify()
+  {  
+    this.formdataService.verified.next(true);
     localStorage.setItem("PersonalDetails",JSON.stringify(this.personalDetail));
     localStorage.setItem("CompanyDetails",JSON.stringify(this.companyDetail));
   }

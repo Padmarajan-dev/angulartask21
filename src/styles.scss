@@ -1,6 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import '~bs-stepper/dist/css/bs-stepper.min.css';
 @import '~flag-icon-css/css/flag-icon.css';
+@import '~font-awesome/css/font-awesome.min.css';
 
 
 .form-box 
@@ -32,3 +33,11 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.bs-stepper .step-trigger:disabled {
+    opacity: 1.65;
+}
+
+.error-text 
+{
+    color: red;
+}

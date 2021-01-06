@@ -4,7 +4,7 @@
     <!--Full name field-->
     <div>
         <label class="form-control-label">Full Name</label>
-        <input class="form-control" autocomplete="off" formControlName="fullname">
+        <input class="form-control" autocomplete="rgre" formControlName="fullname">
     </div>
     <div class="mt-2">
       <p class="error-text ml-2" *ngIf="personalDetailsForm.get('fullname').touched && personalDetailsForm.get('fullname').errors?.required">Full name is required</p>
@@ -18,13 +18,13 @@
       <label class="form-control-label">Gender</label>
       <div class="btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-outline-light ml-2" [class.active]="gender=='male'">
-          <input type="checkbox" checked autocomplete="off" (click)="getGender('male')"> Male
+          <input type="checkbox" checked  (click)="getGender('male')"> Male
         </label>
         <label class="btn btn-outline-light ml-2" [class.active]="gender=='female'">
-          <input type="checkbox"  autocomplete="off" (click)="getGender('female')"> Female
+          <input type="checkbox"  (click)="getGender('female')"> Female
         </label>
         <label class="btn btn-outline-light ml-2" [class.active]="gender=='other'">
-          <input type="checkbox"  autocomplete="off" (click)="getGender('other')"> Other
+          <input type="checkbox"  (click)="getGender('other')"> Other
         </label>
       </div>
    </div>
@@ -63,7 +63,7 @@
               <span [class]="flagclass"></span>
               <p class="mt-3 ml-1">{{countrycode}}</p>
         </div>
-          <input type="number" formControlName="mobile" class="form-control mt-2" autocomplete="off">
+          <input type="number" formControlName="mobile" class="form-control mt-2" autocomplete="rger">
          </div>
          <div class="mt-2">
           <p class="error-text ml-2" *ngIf="personalDetailsForm.get('mobile').touched && personalDetailsForm.get('mobile').errors?.required">mobile number is required</p>
@@ -72,6 +72,8 @@
      </div>
     
     <button class="btn btn-info mt-4 col-12 mx-auto" [disabled]="!personalDetailsForm.valid || gender==''" (click)="gotoCompanyDetails()">Next</button>
+
+    <p class="mt-4 text-center">Already have an account? <span style="color: green;">Log in</span></p> 
 </div>
 </div>
 

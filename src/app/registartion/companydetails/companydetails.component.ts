@@ -13,6 +13,7 @@ import { RegistrationformService } from 'src/app/services/registrationform.servi
 export class CompanydetailsComponent implements OnInit {
   @Output() next = new EventEmitter<string>();
   @Output() back = new EventEmitter<string>();
+  companyDetailsFilled:boolean=false;
   companyDetails:FormGroup;
   Companydetail:Companydetail=new Companydetail();
   imageSrc: string | ArrayBuffer='../../../assets/dummy-image.png';
@@ -23,7 +24,7 @@ export class CompanydetailsComponent implements OnInit {
       'companyname':['',[Validators.required]],
       'emailid':['',[Validators.required,Validators.email]],
       'jobtitle':['',[Validators.required]],
-      'yearofexp':['',[Validators.required,Validators.pattern("[0-9]")]],
+      'yearofexp':['',[Validators.required]],
     });
   }
 
@@ -36,6 +37,7 @@ export class CompanydetailsComponent implements OnInit {
      this.Companydetail.emailid = this.f.emailid.value;
      this.Companydetail.yearsofexperience=parseInt(this.f.yearofexp.value);
      this.formdataService.Companydetails.next(this.Companydetail);
+     this.formdataService.companyDetailsFilled.next(true);
      this.next.emit('');
    }
 
