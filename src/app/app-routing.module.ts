@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path:'registration',
     loadChildren:()=>import('./registartion/registartion.module').then(m=>m.RegistartionModule)
+  },
+  {
+    path:'welcomepage',
+    loadChildren:()=>import('./welcomepage/welcomepage.module').then(m=>m.WelcomepageModule)
   }
 ];
 

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import * as $ from 'jquery' ;
 import { Companydetail } from 'src/app/models/companydetail';
 import { Persondetail } from 'src/app/models/persondetail';
@@ -15,7 +16,7 @@ export class VerficationComponent implements OnInit {
   verified:boolean=false;
   personalDetail:Persondetail=new Persondetail();
   companyDetail:Companydetail=new Companydetail();
-  constructor(private fb:FormBuilder,private formdataService:RegistrationformService) { 
+  constructor(private fb:FormBuilder,private formdataService:RegistrationformService,private router:Router) { 
   }
 
   ngOnInit(): void {
@@ -53,5 +54,6 @@ export class VerficationComponent implements OnInit {
     this.formdataService.verified.next(true);
     localStorage.setItem("PersonalDetails",JSON.stringify(this.personalDetail));
     localStorage.setItem("CompanyDetails",JSON.stringify(this.companyDetail));
+    this.router.navigate(['/welcomepage']);
   }
 }

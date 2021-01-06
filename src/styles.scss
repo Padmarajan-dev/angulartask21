@@ -2,6 +2,7 @@
 @import '~bs-stepper/dist/css/bs-stepper.min.css';
 @import '~flag-icon-css/css/flag-icon.css';
 @import '~font-awesome/css/font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Darker+Grotesque:wght@300&family=Titillium+Web&display=swap');
 
 
 .form-box 
@@ -19,6 +20,9 @@ body
 
 label
 {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 20px;
+    color: black;
     font-weight: bold;
 }
 
@@ -40,4 +44,9 @@ input::-webkit-inner-spin-button {
 .error-text 
 {
     color: red;
+}
+
+.main-heading 
+{
+    font-size: xx-large;
 }

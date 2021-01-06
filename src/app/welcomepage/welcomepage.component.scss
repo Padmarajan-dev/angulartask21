@@ -1,0 +1,150 @@
+
+
+.nav-link 
+{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btn 
+{
+    border-radius: none;
+    border: none;
+    background-color: indigo !important;
+}
+
+body 
+{
+    overflow-x: hidden;
+}
+#main-icon>a>i
+{
+    font-size: 25px;
+    color: black;
+}
+
+#profile
+{
+    background-color: #f8f9fa!important;
+    padding-bottom: 4%;
+}
+
+#banner
+{
+  height:200px;
+  width:250px;
+}
+
+.card>img 
+{
+    height: 50px;
+    width: 50px;
+}
+
+.progress 
+{
+    height: 0.2rem !important;
+}
+
+.card 
+{
+    border:none !important;
+    box-shadow: 2px 2px 5px grey;
+    border-radius: 0% !important;
+}
+@media (min-width: 992px){
+
+    .form-control 
+    {
+        width: 60% !important;
+    }
+
+    .col-lg-3
+    {
+        max-width: 17% !important;
+    }
+    .card  
+    {
+        height: 8em !important;
+    }
+#banner
+  {
+    height:300px;
+    width:550px;
+  }
+  #about_me>div>.img-fluid
+  {
+      height: 230px !important;
+      max-width: 40% !important;
+  }
+}
+
+.navbar 
+{
+    width: 104% !important;
+    position: fixed !important;
+    z-index: 10;
+}
+
+::-webkit-scrollbar-thumb
+{
+    width: 10px;
+    background-color: indigo;
+    border-radius: 10px;
+}
+
+.portfolio-images
+{
+    height: 130px !important;
+    width: 90%;
+}
+
+#mailarea 
+{
+    height: calc(6.5em + .75rem + 2px);
+}
+
+.main-heading  
+{
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: #c6f51e;
+}
+
+.tech-heading 
+{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#profile>h5,p 
+{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#quote 
+{
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+}
+
+.servicesimages 
+{
+    height: 130px !important;
+    width: 130px !important;
+}
+.others 
+{
+    background-color: white;
+}
+
+.material-icons 
+{
+    font-size: 60px;
+}
+
+.welcome
+{
+    font-weight: bold;
+    font-size: 20px;
+}
