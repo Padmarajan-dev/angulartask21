@@ -12,6 +12,25 @@
     border-radius: 4px;
 }
 
+#mobile
+{
+.iti--allow-dropdown input, .iti--allow-dropdown input[type=text]
+{
+    display: none !important;
+}
+.iti__arrow {
+    margin-left: 5px;
+    display: none;
+}
+
+
+}
+
+.flag-icon
+{
+    font-size: 70px;
+}
+
 body
 {
     background-color:#e2e9f0;

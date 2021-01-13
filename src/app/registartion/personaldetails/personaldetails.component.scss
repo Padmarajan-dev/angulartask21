@@ -13,10 +13,13 @@
     background-color: #5bff317a !important;
 }
 
+
+
 .custom-input
 {
     border: 1px solid grey;
     border-radius: 4px;
+    padding: 2px;
     &>.custom-select,.form-control
     {
         border: none !important;

@@ -33,15 +33,17 @@
      <!--Gender Field-->
      <!--Country Input Field-->
    <div class="mt-4" >
-      <label class="form-control-label">Country</label> 
-      <div class="input-group-prepend custom-input p-1">
-        <span [class]="flagclass"></span>
-        <select class="custom-select" (change)="onChange($event.target.value)" id="countryselect" formControlName="country">
-            <option *ngFor="let country of countries" [value]="country.name" data-icon="flag-icon flag-icon-gr">
-              {{country.name}}
-            </option>
-        </select>
-       </div>
+      <label class="form-control-label d-block">Country</label> 
+      <div  class="custom-input">
+        <input type="text" autocomplete="off" 
+        class="custom-input d-block"
+        ng2TelInput 
+        [ng2TelInputOptions]="{initialCountry: 'in'}"
+        (countryChange)="onCountryChange($event)" 
+        [value]="country"
+        />
+      </div>
+
    </div>  
    <p class="error-text mt-2 ml-2" *ngIf="personalDetailsForm.get('country').touched && personalDetailsForm.get('country').errors?.required">please select a Country</p>
 
@@ -60,9 +62,9 @@
     <div class="mt-4" >
         <label class="form-control-label">Phone</label> 
         <div class="input-group-prepend custom-input">
-          <div class="col-lg-3  col-4 d-flex code">
-              <span [class]="flagclass"></span>
-              <p class="mt-3 ml-1">{{countrycode}}</p>
+          <div class="col-lg-3  col-4 d-flex code " id="mobile">
+            <span [class]="flagIcon"></span>
+            <p class="mt-4 ml-1 ml-lg-3">+{{dialCode}}</p>
         </div>
           <input type="number" formControlName="mobile" class="form-control mt-2" autocomplete="rger">
          </div>

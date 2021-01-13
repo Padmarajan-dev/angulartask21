@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as $ from 'jquery' ;
@@ -12,6 +12,7 @@ import { RegistrationformService } from 'src/app/services/registrationform.servi
 })
 export class VerficationComponent implements OnInit {
   @Output() backto = new EventEmitter<string>();
+
   verficationform:FormGroup;
   verified:boolean=false;
   personalDetail:Persondetail=new Persondetail();

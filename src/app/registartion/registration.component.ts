@@ -8,7 +8,7 @@ import { RegistrationformService } from '../services/registrationform.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-
+   counter:number=0;
    profiledetailform:boolean=false;
    companydetailform:boolean=false;
    verified:boolean=false;
@@ -27,6 +27,8 @@ export class RegistrationComponent implements OnInit {
 
 
   private stepper: Stepper;
+
+
 
   next() {
     this.stepper.next();

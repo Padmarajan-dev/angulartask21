@@ -9,6 +9,7 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { NgStepperModule } from 'angular-ng-stepper';
 import { Ng2TelInputModule } from 'ng2-tel-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 @NgModule({
   declarations: [PersonaldetailsComponent, CompanydetailsComponent, VerficationComponent, RegistrationComponent],
   imports: [
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CdkStepperModule,
     NgStepperModule,
     Ng2TelInputModule,
+    NgxIntlTelInputModule,
     FormsModule,
     ReactiveFormsModule,
   ]

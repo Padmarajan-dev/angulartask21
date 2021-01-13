@@ -8,7 +8,7 @@ import {Ng2TelInputModule} from 'ng2-tel-input';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
