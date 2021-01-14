@@ -17,6 +17,7 @@
     "@angular/common": "~9.1.12",
     "@angular/compiler": "~9.1.12",
     "@angular/core": "~9.1.12",
+    "@angular/fire": "^5.0.2",
     "@angular/forms": "~9.1.12",
     "@angular/platform-browser": "~9.1.12",
     "@angular/platform-browser-dynamic": "~9.1.12",
@@ -25,6 +26,7 @@
     "bootstrap": "^4.5.3",
     "bs-stepper": "^1.7.0",
     "countrycitystatejson": "^20.8.9-a",
+    "firebase": "^7.1.0",
     "flag-icon-css": "^3.5.0",
     "font-awesome": "^4.7.0",
     "google-libphonenumber": "^3.2.15",
@@ -36,6 +38,7 @@
     "ngx-intl-tel-input": "^2.5.4",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
+    "sweetalert2": "^10.13.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

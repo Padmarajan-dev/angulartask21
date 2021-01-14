@@ -4,6 +4,8 @@ import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Companydetail } from 'src/app/models/companydetail';
 import { RegistrationformService } from 'src/app/services/registrationform.service';
+import {AngularFireStorage} from '@angular/fire/storage';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-companydetails',
@@ -17,7 +19,12 @@ export class CompanydetailsComponent implements OnInit {
   companyDetails:FormGroup;
   Companydetail:Companydetail=new Companydetail();
   imageSrc: string | ArrayBuffer='../../../assets/dummy-image.png';
-  constructor(private fb:FormBuilder,private formdataService:RegistrationformService) { }
+
+  //for firestorage
+  img;
+  loader:boolean=false;
+  downloadUrl:any;
+  constructor(private fb:FormBuilder,private formdataService:RegistrationformService,private storage:AngularFireStorage) { }
   isChecked:boolean=false;
   ngOnInit(): void {
     this.companyDetails= this.fb.group({
@@ -64,6 +71,20 @@ export class CompanydetailsComponent implements OnInit {
         const reader = new FileReader();
         reader.onload = e => this.imageSrc = reader.result;
         reader.readAsDataURL(file);
+        this.loader=true;
+        this.img=this.storage.upload('/'+event.target.files[0].name+'/',event.target.files[0]);
+        this.img.then(()=>{
+          this.downloadUrl=this.storage.ref('/'+event.target.files[0].name+'/').getDownloadURL();
+          this.downloadUrl.subscribe(async(data)=>{
+            this.imageSrc=await data;
+            if(this.imageSrc!='')
+            {
+            this.loader=await false;
+            //for show a sweetalert
+            Swal.fire('Yay!!', 'You Profile Uploaded Successfully', 'success');
+            }
+          });
+        });
 }
 
   //getter for get a formcontrol values;

@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomepageComponent implements OnInit {
   username:string;
+  profilePic:string;
   constructor() { }
 
   ngOnInit(): void {
     let personaldetails = JSON.parse(localStorage.getItem('PersonalDetails'));
+    let CompanyDetails = JSON.parse(localStorage.getItem('CompanyDetails'));
     this.username = personaldetails.fullName;
+    this.profilePic = CompanyDetails.imgurl;
   }
 
 }

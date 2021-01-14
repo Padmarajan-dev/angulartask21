@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthenticationGuard } from './authentication.guard';
 
 
 const routes: Routes = [
@@ -9,7 +10,8 @@ const routes: Routes = [
   },
   {
     path:'welcomepage',
-    loadChildren:()=>import('./welcomepage/welcomepage.module').then(m=>m.WelcomepageModule)
+    loadChildren:()=>import('./welcomepage/welcomepage.module').then(m=>m.WelcomepageModule),
+    canActivate:[AuthenticationGuard]
   }
 ];
 

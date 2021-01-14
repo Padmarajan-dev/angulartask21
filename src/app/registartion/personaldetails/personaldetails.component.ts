@@ -39,7 +39,6 @@ export class PersonaldetailsComponent implements OnInit{
      this.persondetail.country=this.country;
      this.persondetail.state=this.f.state.value;
      this.persondetail.mobile='+'+this.dialCode+' '+this.f.mobile.value;
-     console.log(this.persondetail);
      this.formdataService.personaldetails.next(this.persondetail);
      this.formdataService.profileDetailsFilled.next(true);
      this.next.emit('');
