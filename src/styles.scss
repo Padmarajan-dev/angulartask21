@@ -26,9 +26,37 @@
 
 }
 
+#phone
+{
+    .custom-input
+    {
+        height: 2.4em;
+    }
+    .code 
+    {
+        height: 1.9em;
+    }
+    .form-control
+    {
+        height: 1em;
+    }
+}
+
+.dialcode
+{
+    font-size: 15px;
+}
+
+#country
+{
+    .col-11
+    {
+        max-width: 96% !important;
+    }
+}
 .flag-icon
 {
-    font-size: 70px;
+    font-size: 13px;
 }
 
 body
@@ -69,3 +97,16 @@ input::-webkit-inner-spin-button {
 {
     font-size: xx-large;
 }
+// @media only screen and (min-width: 1200px) {
+//  .flag-icon
+// {
+//     font-size: 20px !important;
+// }
+// }
+
+// @media only screen and (min-width: 992px) {
+//     .flag-icon
+//     {
+//         font-size: 20px !important;
+//     }
+// }

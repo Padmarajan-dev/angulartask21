@@ -5,12 +5,16 @@ import {Persondetail} from '../../models/persondetail';
 import * as $ from 'jquery' 
 import { from, Observable, of, Subject } from 'rxjs';
 import { RegistrationformService } from 'src/app/services/registrationform.service';
+
+declare var require: any;
+const yourhandle= require('countrycitystatejson');
 @Component({
   selector: 'app-personaldetails',
   templateUrl: './personaldetails.component.html',
   styleUrls: ['./personaldetails.component.scss']
 })
 export class PersonaldetailsComponent implements OnInit{
+
   @Output() next = new EventEmitter<string>();
   @Input() counter:number=0;
   gender:string='';
@@ -32,9 +36,10 @@ export class PersonaldetailsComponent implements OnInit{
 
      this.persondetail.fullName = this.f.fullname.value;
      this.persondetail.gender=this.gender;
-     this.persondetail.country=this.f.country.value;
+     this.persondetail.country=this.country;
      this.persondetail.state=this.f.state.value;
-     this.persondetail.mobile=this.dialCode+' '+this.f.mobile.value;
+     this.persondetail.mobile='+'+this.dialCode+' '+this.f.mobile.value;
+     console.log(this.persondetail);
      this.formdataService.personaldetails.next(this.persondetail);
      this.formdataService.profileDetailsFilled.next(true);
      this.next.emit('');
@@ -59,22 +64,17 @@ export class PersonaldetailsComponent implements OnInit{
     this.countryCode=event.iso2;
     this.flagIcon='flag-icon flag-icon-'+this.countryCode;
     this.dialCode = event.dialCode;
-    console.log(this.countryCode);
-  }
-
-  getNumber(event)
-  {
-    console.log(event);
+    this.states =  Object.keys(yourhandle.getCountryByShort(this.countryCode.toUpperCase()).states);
   }
 
   ngOnInit(): void {
     this.personalDetailsForm= this.fb.group({
       'fullname':['',[Validators.required,Validators.minLength(4),Validators.maxLength(8)]],
-      'country':['',[Validators.required]],
-      'state':['',[Validators.required]],
+      'country':[''],
+      'state':['Tamil Nadu'],
       'mobile':['',[Validators.required,Validators.pattern("[0-9 ]{10}")]],
     });
-
+    this.states =  Object.keys(yourhandle.getCountryByShort(this.countryCode.toUpperCase()).states);
   }
 
 

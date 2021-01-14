@@ -33,17 +33,18 @@
      <!--Gender Field-->
      <!--Country Input Field-->
    <div class="mt-4" >
-      <label class="form-control-label d-block">Country</label> 
-      <div  class="custom-input">
-        <input type="text" autocomplete="off" 
-        class="custom-input d-block"
-        ng2TelInput 
-        [ng2TelInputOptions]="{initialCountry: 'in'}"
-        (countryChange)="onCountryChange($event)" 
-        [value]="country"
-        />
+      <label class="form-control-label d-flex">Country</label> 
+      <div class="row" id="country">
+        <div  class="d-flex custom-input col-11 ml-3 col-lg-10 ml-lg-3">
+          <input type="text" autocomplete="off" 
+          ng2TelInput 
+          [ng2TelInputOptions]="{initialCountry: 'in'}"
+          (countryChange)="onCountryChange($event)" 
+          [value]="country"
+          />
+          <i class="material-icons ml-auto">keyboard_arrow_down</i>
+        </div>
       </div>
-
    </div>  
    <p class="error-text mt-2 ml-2" *ngIf="personalDetailsForm.get('country').touched && personalDetailsForm.get('country').errors?.required">please select a Country</p>
 
@@ -59,12 +60,12 @@
    </div> 
    <p class="error-text mt-2 ml-2" *ngIf="personalDetailsForm.get('state').touched && personalDetailsForm.get('state').errors?.required">please select a state</p>
     <!--State Input Field-->
-    <div class="mt-4" >
+    <div class="mt-4" id="phone">
         <label class="form-control-label">Phone</label> 
         <div class="input-group-prepend custom-input">
           <div class="col-lg-3  col-4 d-flex code " id="mobile">
             <span [class]="flagIcon"></span>
-            <p class="mt-4 ml-1 ml-lg-3">+{{dialCode}}</p>
+            <p class="mt-1 ml-1 ml-lg-3 dialcode">+{{dialCode}}</p>
         </div>
           <input type="number" formControlName="mobile" class="form-control mt-2" autocomplete="rger">
          </div>
