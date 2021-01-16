@@ -11,7 +11,7 @@ export class AuthenticationGuard implements CanActivate {
 
   }
   canActivate():boolean{
-    if(Object.keys(JSON.parse(localStorage.getItem('PersonalDetails'))).length!=0 && Object.keys(JSON.parse(localStorage.getItem('CompanyDetails'))).length!=0)
+    if(localStorage.length>0 && Object.keys(JSON.parse(localStorage.getItem('PersonalDetails'))).length!=0 && Object.keys(JSON.parse(localStorage.getItem('CompanyDetails'))).length!=0)
     {
     return true;
     }else 

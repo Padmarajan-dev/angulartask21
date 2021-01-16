@@ -104,9 +104,9 @@ input::-webkit-inner-spin-button {
 // }
 // }
 
-// @media only screen and (min-width: 992px) {
-//     .flag-icon
-//     {
-//         font-size: 20px !important;
-//     }
-// }
+@media only screen and (min-width: 992px) {
+    .flag-icon
+    {
+        font-size: 45px !important;
+    }
+}
