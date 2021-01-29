@@ -23,7 +23,7 @@
         </button>
       </div>
       <div class="step ml-1 ml-lg-5" data-target="#test-l-3">
-        <button class="step-trigger">
+        <button class="step-trigger" [disabled]="true">
           <span class="bs-stepper-circle" >
             <p *ngIf="!verified">3</p>
             <i *ngIf="verified" class="fa fa-check"></i>
