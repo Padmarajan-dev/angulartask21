@@ -15,20 +15,14 @@ export class VerficationComponent implements OnInit {
   @Output() backto = new EventEmitter<string>();
 
   verficationform:FormGroup;
+  otp:string='';
   verified:boolean=false;
   personalDetail:Persondetail=new Persondetail();
   companyDetail:Companydetail=new Companydetail();
-  constructor(private fb:FormBuilder,private formdataService:RegistrationformService,private router:Router) { 
+  constructor(private formdataService:RegistrationformService,private router:Router) { 
   }
 
   ngOnInit(): void {
-    this.verficationform = this.fb.group({
-      'value1':['',[Validators.required]],
-      'value2':['',[Validators.required]],
-      'value3':['',[Validators.required]],
-      'value4':['',[Validators.required]],
-      'value5':['',[Validators.required]],
-    });
     this.formdataService.personaldetails.subscribe(res=>{
       this.personalDetail.fullName = res.fullName;
       this.personalDetail.country=res.country;
@@ -46,13 +40,17 @@ export class VerficationComponent implements OnInit {
     });
   }
 
-  //for restrict a input to only accepts a single digit
-  restrict(event)
-  {
-    if(event.target.value.length>0) 
-    return false
-  }
 
+ //get otp value
+  onOtpChange(event)
+  {
+    
+   if(event.length==5)
+   {
+     this.otp = event;
+     this.verified=true;
+   }
+  }
   backtoprevious()
   {
     this.backto.emit();

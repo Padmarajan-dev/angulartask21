@@ -3,20 +3,16 @@
     <p class="text-center mt-3">For your security we need to verfiy yoy identity.we send a 5-digit code to
     <span style="font-weight: bold;">name@domain.com. </span>Please enter it below
    </p>  
-    <div class="form-box col-12 col-lg-3 mx-auto mt-4" [formGroup]="verficationform">
+    <div class="form-box col-12 col-lg-3 mx-auto mt-4">
         <div class="col-12" >
             <label class="form-control-label">Enter code</label>
             <div class="d-flex" id="code-inputs" >
-            <input type="number" max="0" (keypress)="restrict($event)" formControlName="value1" class="form-control col-2 ml-1">
-            <input type="number" max="0" (keypress)="restrict($event)" formControlName="value2"  class="form-control col-2 ml-1">
-            <input type="number" max="0" (keypress)="restrict($event)" formControlName="value3"  class="form-control col-2 ml-1">
-            <input type="number" max="0" (keypress)="restrict($event)" formControlName="value4"  class="form-control col-2 ml-1">
-            <input type="number" max="0" (keypress)="restrict($event)" formControlName="value5"  class="form-control col-2 ml-1">
+                <ng-otp-input #otp (onInputChange)="onOtpChange($event)"  [config]="{length:5,allowNumbersOnly:true}"></ng-otp-input>
             </div>
         </div>    
         <div class="col-12">
-            <button class="btn  mt-4 col-7 col-lg-3 mx-auto backbtn" (click)="backtoprevious()">Back</button>
-            <button class="btn btn-success mt-4 col-4  col-lg-8 mx- ml-1" [disabled]="verficationform.invalid" (click)="verify()">Verify</button>
+            <button class="btn  mt-4 col-7 col-lg-3 mx-auto backbtn"  (click)="backtoprevious()">Back</button>
+            <button class="btn btn-success mt-4 col-4  col-lg-8 mx- ml-1" [disabled]="!verified"  (click)="verify()">Verify</button>
         </div>  
         <p class="text-center mt-3">Didn't recieve a mail? Check spam filter for an email from <span style="color: green;font-weight: bold;">name@domain.com</span></p>  
         </div>

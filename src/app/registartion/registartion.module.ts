@@ -11,6 +11,7 @@ import { Ng2TelInputModule } from 'ng2-tel-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { FocusDirective } from '../diectives/focusdirective.directive';
+import { NgOtpInputModule } from  'ng-otp-input';
 
 @NgModule({
   declarations: [PersonaldetailsComponent, CompanydetailsComponent, VerficationComponent, RegistrationComponent,FocusDirective],
@@ -23,6 +24,7 @@ import { FocusDirective } from '../diectives/focusdirective.directive';
     NgxIntlTelInputModule,
     FormsModule,
     ReactiveFormsModule,
+    NgOtpInputModule 
   ]
 })
 export class RegistartionModule { }
