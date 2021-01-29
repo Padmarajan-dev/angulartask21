@@ -46,6 +46,13 @@ export class VerficationComponent implements OnInit {
     });
   }
 
+  //for restrict a input to only accepts a single digit
+  restrict(event)
+  {
+    if(event.target.value.length>0) 
+    return false
+  }
+
   backtoprevious()
   {
     this.backto.emit();
