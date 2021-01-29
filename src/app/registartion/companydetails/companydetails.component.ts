@@ -18,7 +18,7 @@ export class CompanydetailsComponent implements OnInit {
   companyDetailsFilled:boolean=false;
   companyDetails:FormGroup;
   Companydetail:Companydetail=new Companydetail();
-  imageSrc: string | ArrayBuffer='../../../assets/dummy-image.png';
+  imageSrc: string | ArrayBuffer='https://firebasestorage.googleapis.com/v0/b/chatapp-378c0.appspot.com/o/dummy-image.png?alt=media&token=45dc8e3a-75d4-49ea-ad68-2f0b5d28b121';
 
   //for firestorage
   img;

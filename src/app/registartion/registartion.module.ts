@@ -10,8 +10,10 @@ import { NgStepperModule } from 'angular-ng-stepper';
 import { Ng2TelInputModule } from 'ng2-tel-input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { FocusDirective } from '../directives/focusdirective.directive';
+
 @NgModule({
-  declarations: [PersonaldetailsComponent, CompanydetailsComponent, VerficationComponent, RegistrationComponent],
+  declarations: [PersonaldetailsComponent, CompanydetailsComponent, VerficationComponent, RegistrationComponent,FocusDirective],
   imports: [
     CommonModule,
     RegistrationroutingModule,

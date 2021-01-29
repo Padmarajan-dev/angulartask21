@@ -1,11 +1,11 @@
 <div class="col-12 input">
-<h5 class="text-center main-heading">Personal Details</h5>
+<h5  class="text-center main-heading">Personal Details</h5>
 <p class="text-center mt-3">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
 <div class="form-box col-12 col-lg-3 mx-auto mt-4" [formGroup]="personalDetailsForm">
     <!--Full name field-->
-    <div>
+    <div class="inputbox">
         <label class="form-control-label">Full Name</label>
-        <input class="form-control" autocomplete="rgre" formControlName="fullname">
+        <input inpFocus class="form-control" autocomplete="rgre" formControlName="fullname">
     </div>
     <div class="mt-2">
       <p class="error-text ml-2" *ngIf="personalDetailsForm.get('fullname').touched && personalDetailsForm.get('fullname').errors?.required">Full name is required</p>
@@ -15,7 +15,7 @@
 
    <!--Full name field-->
    <!--Gender Field-->
-   <div class="mt-4">
+   <div class="mt-4 inputbox">
       <label class="form-control-label">Gender</label>
       <div class="btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-outline-light ml-2" [class.active]="gender=='male'">
@@ -32,17 +32,21 @@
    <p class="error-text mt-2 ml-2" *ngIf="gender==''">Please Select a Gender</p>
      <!--Gender Field-->
      <!--Country Input Field-->
-   <div class="mt-4" >
+   <div class="mt-4 inputbox" >
       <label class="form-control-label d-flex">Country</label> 
-      <div class="row" id="country">
-        <div  class="d-flex custom-input col-11 ml-3 col-lg-10 ml-lg-3">
-          <input type="text" autocomplete="off" 
-          ng2TelInput 
-          [ng2TelInputOptions]="{initialCountry: 'in'}"
-          (countryChange)="onCountryChange($event)" 
-          [value]="country"
-          />
-          <i class="material-icons ml-auto">keyboard_arrow_down</i>
+      <div class="row" >
+        <div  class="d-flex custom-input col-10 col-lg-11 ml-3 ml-lg-3" inpFocus id="country">
+          <div class="col-9 col-lg-10">
+            <input   type="text" autocomplete="off" 
+            ng2TelInput 
+            [ng2TelInputOptions]="{initialCountry: 'in'}"
+            (countryChange)="onCountryChange($event)" 
+            [value]="country"
+            />
+          </div>
+          <div class="col-2 col-lg-11">
+            <i class="material-icons ml-auto">keyboard_arrow_down</i>
+          </div>
         </div>
       </div>
    </div>  
@@ -50,9 +54,9 @@
 
      <!--Country Input Field-->
     <!--State Input Field-->
-   <div class="mt-4">
+   <div class="mt-4 inputbox">
     <label class="form-control-label">State</label> 
-    <select class="custom-select" formControlName="state">
+    <select class="custom-select" inpFocus formControlName="state">
       <option *ngFor="let state of states" [value]="state" data-icon="flag-icon flag-icon-gr">
         {{state}}
       </option>
@@ -60,14 +64,14 @@
    </div> 
    <p class="error-text mt-2 ml-2" *ngIf="personalDetailsForm.get('state').touched && personalDetailsForm.get('state').errors?.required">please select a state</p>
     <!--State Input Field-->
-    <div class="mt-4" id="phone">
+    <div class="mt-4 inputbox" id="phone">
         <label class="form-control-label">Phone</label> 
-        <div class="input-group-prepend custom-input">
+        <div class="input-group-prepend custom-input" inpFocus>
           <div class="col-lg-3  col-4 d-flex code " id="mobile">
             <span [class]="flagIcon"></span>
             <p class="mt-1 ml-1 ml-lg-3 dialcode">+{{dialCode}}</p>
-        </div>
-          <input type="number" formControlName="mobile" class="form-control mt-2" autocomplete="rger">
+          </div>
+          <input type="number"  formControlName="mobile" class="form-control mt-2" autocomplete="rger">
          </div>
          <div class="mt-2">
           <p class="error-text ml-2" *ngIf="personalDetailsForm.get('mobile').touched && personalDetailsForm.get('mobile').errors?.required">mobile number is required</p>

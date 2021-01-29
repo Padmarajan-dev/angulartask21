@@ -9,7 +9,8 @@ export const route:Routes=[
   }
 ]
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(route)

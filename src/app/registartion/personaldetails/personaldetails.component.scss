@@ -16,6 +16,7 @@
 .custom-select
 {
     background: #fff url('../../../assets/images/arrow_drop_down.png') no-repeat right 0.75rem center/10px 10px;
+    box-shadow: none !important;
 }
 
 
@@ -30,6 +31,16 @@
         box-shadow: none !important;
         border-radius: none !important;
         outline: none !important;
+    }
+}
+
+#country
+{
+    padding: 2px !important;
+    input 
+    {
+        cursor: pointer;
+        width:134%;
     }
 }
 
@@ -48,4 +59,6 @@ input
 {
     background-color: antiquewhite;
 }
+
+
 

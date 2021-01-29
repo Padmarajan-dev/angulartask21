@@ -5,6 +5,7 @@ import {Persondetail} from '../../models/persondetail';
 import * as $ from 'jquery' 
 import { from, Observable, of, Subject } from 'rxjs';
 import { RegistrationformService } from 'src/app/services/registrationform.service';
+import { FocusDirective } from '../../directives/focusdirective.directive';
 
 declare var require: any;
 const yourhandle= require('countrycitystatejson');

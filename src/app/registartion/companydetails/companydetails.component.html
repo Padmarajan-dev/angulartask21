@@ -16,17 +16,17 @@
         </div>
 
          <!--Company name field-->
-    <div class="mt-4">
+    <div class="mt-4 inputbox">
         <label class="form-control-label">Company Name</label>
-        <input class="form-control" autocomplete="gert" formControlName="companyname">
+        <input inpFocus class="form-control" autocomplete="gert" formControlName="companyname">
     </div>
     <p class="error-text ml-2 mt-2" *ngIf="companyDetails.get('companyname').touched && companyDetails.get('companyname').errors?.required">Company name is required</p>
    <!--company name field-->
    
 <!--Email-id field-->
-    <div class="mt-4">
+    <div class="mt-4 inputbox">
         <label class="form-control-label">Email-id</label>
-        <input class="form-control" autocomplete="fgg" formControlName="emailid">
+        <input inpFocus class="form-control" autocomplete="fgg" formControlName="emailid">
     </div>
     <div class="mt-2">
         <p class="error-text ml-2" *ngIf="companyDetails.get('emailid').touched && companyDetails.get('emailid').errors?.required">email id is required</p>
@@ -35,16 +35,16 @@
 <!--Email-id field-->
 
   <!--job title-->
-    <div class="mt-4">
+    <div class="mt-4 inputbox">
         <label class="form-control-label">Job Title</label>
-        <input class="form-control" autocomplete="htr" formControlName="jobtitle">
+        <input inpFocus class="form-control" autocomplete="htr" formControlName="jobtitle">
     </div>
     <p class="error-text ml-2 mt-2" *ngIf="companyDetails.get('jobtitle').touched && companyDetails.get('jobtitle').errors?.required">Job title is required</p>
    <!--job title-->
    <!--year of experience-->
-    <div class="mt-4">
+    <div class="mt-4 inputbox">
         <label class="form-control-label">Year of experience</label>
-        <input type="number" class="form-control" autocomplete="dfg" formControlName="yearofexp">
+        <input inpFocus type="number" class="form-control" autocomplete="dfg" formControlName="yearofexp">
     </div>
     <div class="mt-2">
         <p class="error-text ml-2" *ngIf="companyDetails.get('yearofexp').touched && companyDetails.get('yearofexp').errors?.required">Experience is required</p>

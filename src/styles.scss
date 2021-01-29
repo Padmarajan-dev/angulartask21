@@ -107,6 +107,41 @@ input::-webkit-inner-spin-button {
 @media only screen and (min-width: 992px) {
     .flag-icon
     {
-        font-size: 45px !important;
+        font-size:14px !important;
     }
+}
+
+.form-control
+{
+    box-shadow: none !important;
+    outline: none;
+}
+
+
+
+.iti--allow-dropdown input
+{
+ padding-left: 28px;
+}
+
+.inputdiv
+{
+    .form-control:focus,input:focus
+    {
+        border: 2px solid #36d836;
+        &~.form-control-label
+        {
+            color:  #36d836;
+        }
+    }
+}
+
+.focusedborder
+{
+    border: 1px solid #29ea29 !important;
+}
+
+.labelcol
+{
+    color: #29ea29 !important;
 }
