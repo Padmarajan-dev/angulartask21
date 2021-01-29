@@ -6,6 +6,7 @@ import { Companydetail } from 'src/app/models/companydetail';
 import { RegistrationformService } from 'src/app/services/registrationform.service';
 import {AngularFireStorage} from '@angular/fire/storage';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { FocusDirective } from '../../diectives/focusdirective.directive';
 
 @Component({
   selector: 'app-companydetails',
